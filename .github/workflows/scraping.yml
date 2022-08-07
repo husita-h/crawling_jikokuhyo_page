@@ -6,14 +6,13 @@ on:
   push:
 
 jobs:
-  build:
+  scraping:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4  # https://github.com/actions/setup-python
+    - uses: actions/setup-python@v4 # https://github.com/actions/setup-python
       with:
         python-version: '3.9.13'
-        # python-version: '3.9.13'
     - run: pip install -r requirements.txt
     - name: Run a scraping script
       run: |
@@ -22,8 +21,8 @@ jobs:
     - name: Set current datetime as env variable
       env:
         TZ: 'Asia/Tokyo'
-      run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-    - uses: stefanzweifel/git-auto-commit-action@v3.0.0
+      run: echo "CURRENT_DATETIME=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+    - uses: stefanzweifel/git-auto-commit-action@v3.0.0 # https://github.com/stefanzweifel/git-auto-commit-action
       with:
         commit_message: Page was updated ${{ env.CURRENT_DATETIME }}
         ref: ${{ github.head_ref }}
