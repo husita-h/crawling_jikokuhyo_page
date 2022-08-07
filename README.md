@@ -13,7 +13,7 @@ pip3 freeze >> requirements.txt
 requirements.txtをもとにライブラリをインストールするときはオプションをつける
 https://pip.pypa.io/en/stable/cli/pip_install/#cmdoption-r
 
-python3 -m venv python-detection-diff
+python3 -m venv <リポジトリ名>
 pip3 install -r requirements.txt
 
 
