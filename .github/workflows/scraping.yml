@@ -9,8 +9,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Run a scraping script
-        run: |
-          echo "Python script"
-          python3 scraping.py
+    - uses: actions/checkout@v3 # https://github.com/actions/setup-python
+    - name: Set up Python 3.9.13
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9.13'
+    - name: Install dependencies
+      run: |
+        pip3 install --upgrade pip
+        pip3 install beautifulsoup4 requests
+    - name: Run a scraping script
+      run: |
+        echo "Run a scraping script"
+        python3 scraping.py
