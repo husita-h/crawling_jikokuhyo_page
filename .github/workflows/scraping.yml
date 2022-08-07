@@ -1,0 +1,15 @@
+name: schedule_scraping_script
+
+on:
+  schedule:
+    - cron: "0 23 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a scraping script
+        run: |
+          echo "Python script"
+          python3 scraping.py
