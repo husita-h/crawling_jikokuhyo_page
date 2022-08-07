@@ -3,6 +3,7 @@ name: schedule_scraping_script
 on:
   schedule:
     - cron: "0 23 * * *"
+  push:
 
 jobs:
   build:
