@@ -13,6 +13,10 @@ pip3 freeze >> requirements.txt
 requirements.txtをもとにライブラリをインストールするときはオプションをつける
 https://pip.pypa.io/en/stable/cli/pip_install/#cmdoption-r
 
+python3 -m venv python-detection-diff
+pip3 install -r requirements.txt
+
+
 anyenv
 https://github.com/anyenv/anyenv
 
