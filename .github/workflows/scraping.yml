@@ -25,4 +25,3 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v3.0.0 # https://github.com/stefanzweifel/git-auto-commit-action
       with:
         commit_message: Page was updated ${{ env.CURRENT_DATETIME }}
-        ref: ${{ github.head_ref }}
